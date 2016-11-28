@@ -14,12 +14,13 @@ RUN apt-get -y install swig
 
 USER main
 #RUN conda install -y mkl
-
+RUN pip install tqdm
 RUN pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 RUN pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
 RUN mkdir ~/gym2 && cd ~/gym2 && git clone https://github.com/openai/gym.git && cd gym && pip install -e .[atari]
 
+RUN /home/main/anaconda/envs/python3/bin/pip install tqdm
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
